@@ -43,7 +43,7 @@ router.post('/upload', upload.array('images', 3), async (req, res) => {
             type: req.body.type,
             locations: req.body.locations,
             suggestions: JSON.parse(req.body.suggestions),
-            image: imageIds.map(id => `https://test-server-lovat.vercel.app/image/${id}`)
+            image: imageIds.map(id => `https://test-server-lovat.vercel.app/api/image/${id}`)
         };
 
         const result = await collection.insertOne(establishmentDocument);
