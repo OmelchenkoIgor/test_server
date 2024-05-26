@@ -11,6 +11,13 @@ app.use(express.json()); // To handle JSON bodies
 connectToDatabase().then(() => {
     app.use('/api', documentsRouter);
 
+    // Додатковий лог для перевірки
+    app.get('/test', (req, res) => {
+        res.send('Маршрут /test працює');
+    });
+
+    module.exports = app; // Експортуємо додаток для Vercel
+
     app.listen(port, () => {
         console.log(`Сервер працює на порту: ${port}`);
     });
