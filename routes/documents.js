@@ -1,8 +1,11 @@
 // documents.js
 const express = require('express');
 const { getDb } = require('../database');
+const multer = require('multer');
+const { ObjectId } = require('mongodb');
 
 const router = express.Router();
+const upload = multer({ storage: multer.memoryStorage() });
 
 // Route to get all establishments
 router.get('/', async (req, res) => {
