@@ -1,6 +1,6 @@
 const express = require('express');
-const connectToDatabase = require('./database');
-const documentsRouter = require('./routes/documents');
+const connectToDatabase = require('../database');
+const documentsRouter = require('../routes/documents');
 
 const app = express();
 const port = 7777;
