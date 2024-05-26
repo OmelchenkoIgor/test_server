@@ -1,4 +1,3 @@
-// app.js
 const express = require('express');
 const connectToDatabase = require('./database');
 const documentsRouter = require('./routes/documents');
@@ -17,4 +16,9 @@ connectToDatabase().then(() => {
     });
 }).catch(error => {
     console.error('Помилка при старті сервера:', error);
+});
+
+// Додатковий лог для перевірки
+app.get('/test', (req, res) => {
+    res.send('Маршрут /test працює');
 });
