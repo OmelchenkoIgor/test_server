@@ -4,7 +4,7 @@ const { MongoClient } = require('mongodb');
 // URL підключення до MongoDB
 const uri = 'mongodb+srv://igorVip:0967718853Qw@cluster0.drfbnur.mongodb.net/';
 
-// Ім'я бази даних і колекції
+// Ім'я бази даних
 const dbName = 'establishments';
 
 let db;

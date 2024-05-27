@@ -8,16 +8,11 @@ const app = express();
 const port = 7777;
 
 app.use(cors()); // Використання CORS для всіх маршрутів
-app.use(express.json()); // To handle JSON bodies
+app.use(express.json()); // Для обробки тіл JSON
 
 // Викликаємо функцію для підключення до бази даних при старті сервера
 connectToDatabase().then(() => {
     app.use('/api', documentsRouter);
-
-    // Додатковий лог для перевірки
-    app.get('/test', (req, res) => {
-        res.send('Маршрут /test працює');
-    });
 
     module.exports = app; // Експортуємо додаток для Vercel
 
