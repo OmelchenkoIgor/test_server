@@ -7,7 +7,7 @@ const { ObjectId } = require('mongodb');
 const router = express.Router();
 const upload = multer({ storage: multer.memoryStorage() });
 
-// Маршрут для всях елементів колекції
+// Маршрут для всіх елементів колекції
 router.get('/', async (req, res) => {
     try {
         console.log('Запит до /api отримано');
@@ -109,7 +109,7 @@ router.get('/type/:type', async (req, res) => {
         const collection = db.collection('establishments');
 
         const typeMap = {
-            'barber-shop': 'Барбершоп',
+            'barber-shops': 'Барбершоп',
             'coffee-shops': 'Кав\'ярня',
             'restaurants': 'Ресторан'
         };
