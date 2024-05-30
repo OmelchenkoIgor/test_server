@@ -31,8 +31,11 @@ router.get('/type/:type/:page', async (req, res) => {
             return res.status(400).json({ error: 'Неправильний тип' });
         }
 
+        const totalCount = await collection.countDocuments(query);
+
         const establishments = await collection.find(query).skip(skipAmount).limit(pageSize).toArray();
-        res.status(200).json(establishments);
+
+        res.status(200).json({ establishments, totalCount });
     } catch (error) {
         console.error('Помилка при пошуку закладів за типом:', error);
         res.status(500).json({ error: 'Помилки при пошуку закладів за типом' });
