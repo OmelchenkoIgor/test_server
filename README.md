@@ -55,7 +55,7 @@
 
 ---
 
-### Отримання всіх довідника
+### Отримання всіх елементів довідника
 
 **GET https://test-server-lovat.vercel.app/api/handbook**
 
@@ -206,10 +206,12 @@
 
 </details>
 
+---
+
 
 ### Вибір об'єктів закладу за id
 
-**GET https://test-server-lovat.vercel.app/api/{id}**
+**GET https://test-server-lovat.vercel.app/api/establishments/{id}**
 
 **Опис:** Отримання певного обєкту за його id.
 
