@@ -5,7 +5,7 @@ const router = express.Router();
 const {getDb} = require('../../database');
 const {ObjectId} = require('mongodb');
 
-router.get('/:id', async (req, res) => {
+router.get('/establishments/:id', async (req, res) => {
     try {
         const db = getDb();
         const collection = db.collection('establishments');

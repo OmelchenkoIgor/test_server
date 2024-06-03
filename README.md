@@ -55,13 +55,65 @@
 
 ---
 
+### Отримання всіх довідника
+
+**GET https://test-server-lovat.vercel.app/api/handbook**
+
+**Опис:** Отримання списку всіх доступних об'єктів.
+
+<details>
+    <summary>Відповідь:</summary>
+
+    ```json
+    [    
+        { 
+            "_id": "6653520b40a72914fa8db440",        
+            "title": "365 Coffee Shop",        
+            "type": "Кав'ярня",        
+            "locations": "вулиця Ділова 7 Київ",        
+            "suggestions": [
+                {
+                    "name": "Зерна мелені",                
+                    "price": "600",                
+                    "volume": "5 кг."
+                },            
+                {
+                    "name": "Зерна",
+                    "price": "550",
+                    "volume": "5 кг."
+                },            
+                {
+                    "name": "Допінг",
+                    "price": "400",
+                    "volume": "1 л."
+                }        
+            ],
+            "image": [            
+                "https://test-server-lovat.vercel.app/api/image/6653520a40a72914fa8db43d",            
+                "https://test-server-lovat.vercel.app/api/image/6653520a40a72914fa8db43e",            
+                "https://test-server-lovat.vercel.app/api/image/6653520a40a72914fa8db43f"        
+            ]
+        }
+        // інші об'єкти колекції
+    ]
+    ```
+
+</details>
+
+---
+
 ### Додавання елементу в колекцію
 
-**POST https://test-server-lovat.vercel.app/api/upload**
+**POST https://test-server-lovat.vercel.app/api/{uploadObject}**
 
 **Опис:** Додавання нового об'єкта до колекції.
 
-**Структура даних:**
+**Приклади доступних uploadObject:**
+
+- uploadEstablishments
+- uploadHandbook
+
+**Структура даних для закладів:**
 - `title` - строка
 - `type` - строка
 - `locations` - строка
@@ -71,6 +123,12 @@
     - `volume` - строка
 - `image` - файл зображення
 
+**Структура даних для довідника:**
+- `title` - строка
+- `addresses` - масив об'єктів, де кожен елемент є строкою
+- `phone_number` - строка
+- `email` - строка
+- `schedule` - строка
 ---
 
 ### Отримання зображення за його ID
@@ -90,9 +148,14 @@
 
 ### Видалення об'єкта з колекції
 
-**DELETE https://test-server-lovat.vercel.app/api/delete/{object_id}**
+**DELETE https://test-server-lovat.vercel.app/api/delete/{deleteObject}/{object_id}**
 
 **Опис:** Видалення бізнесу з колекції за його ID.
+
+**Приклади доступних deleteObject:**
+
+- establishments
+- handbook
 
 <details>
     <summary>Приклад відповіді:</summary>
@@ -160,3 +223,12 @@
     ```
 
 </details>
+
+
+### Вибір об'єктів закладу за id
+
+**GET https://test-server-lovat.vercel.app/api/{id}**
+
+**Опис:** Отримання певного обєкту за його id.
+
+**Приклад: GET https://test-server-lovat.vercel.app/api/66574f08c614e6f4cba63e8b**

@@ -5,7 +5,7 @@ const router = express.Router();
 const {getDb} = require('../../database');
 const {ObjectId} = require('mongodb');
 
-router.delete('/delete/:id', async (req, res) => {
+router.delete('/delete/establishments/:id', async (req, res) => {
     try {
         const db = getDb();
         const establishmentsCollection = db.collection('establishments');

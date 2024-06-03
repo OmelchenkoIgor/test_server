@@ -6,7 +6,7 @@ const {getDb} = require('../../database');
 const multer = require('multer');
 const upload = multer({ storage: multer.memoryStorage() });
 
-router.post('/upload', upload.array('images', 3), async (req, res) => {
+router.post('/uploadEstablishments', upload.array('images', 3), async (req, res) => {
     try {
         const db = getDb();
         const collection = db.collection('establishments');

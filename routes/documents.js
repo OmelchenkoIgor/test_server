@@ -3,13 +3,14 @@
 const express = require('express');
 const router = express.Router();
 
+//--------------------------------------------------------------------------------------------//
+// Маршрути для закладнів
 const allRouter = require('./establishments/all');
 const uploadRouter = require('./establishments/upload');
 const imageRouter = require('./establishments/image');
 const deleteRouter = require('./establishments/delete');
 const typeRouter = require('./establishments/type');
 const selectedEstablishment = require('./establishments/selectedEstablishment');
-
 
 // Маршрут для всіх елементів колекції
 router.use('/', allRouter);
@@ -28,5 +29,25 @@ router.use('/', typeRouter);
 
 // Маршрут для вибору об'єктів за id
 router.use('/', selectedEstablishment);
+
+//--------------------------------------------------------------------------------------------//
+// Маршрути для новин
+
+
+//--------------------------------------------------------------------------------------------//
+// Маршрути для довідника
+
+const allHandbook = require('./handbook/all');
+const uploadHandbook = require('./handbook/upload');
+const deleteHandbook = require('./handbook/delete');
+
+// Маршрут для всіх елементів колекції
+router.use('/', allHandbook);
+
+// Маршрут для додавання елементу в колекцію
+router.use('/', uploadHandbook);
+
+// Маршрут для видалення об'єкта з колекції
+router.use('/', deleteHandbook);
 
 module.exports = router;
