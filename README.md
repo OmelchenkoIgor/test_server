@@ -66,34 +66,16 @@
 
     ```json
     [    
-        { 
-            "_id": "6653520b40a72914fa8db440",        
-            "title": "365 Coffee Shop",        
-            "type": "Кав'ярня",        
-            "locations": "вулиця Ділова 7 Київ",        
-            "suggestions": [
-                {
-                    "name": "Зерна мелені",                
-                    "price": "600",                
-                    "volume": "5 кг."
-                },            
-                {
-                    "name": "Зерна",
-                    "price": "550",
-                    "volume": "5 кг."
-                },            
-                {
-                    "name": "Допінг",
-                    "price": "400",
-                    "volume": "1 л."
-                }        
-            ],
-            "image": [            
-                "https://test-server-lovat.vercel.app/api/image/6653520a40a72914fa8db43d",            
-                "https://test-server-lovat.vercel.app/api/image/6653520a40a72914fa8db43e",            
-                "https://test-server-lovat.vercel.app/api/image/6653520a40a72914fa8db43f"        
-            ]
-        }
+      {
+        "_id": "665e44363a43045d0b161c7e",
+        "title": "Територіальний центр соціального обслуговування Подільського району у м. Києві",
+        "addresses": [
+            "04070 м. Київ, вул. Братська, 15/9"
+        ],
+        "phone_number": "425-05-12",
+        "email": "tc_podol@mail.ua",
+        "schedule": "Понеділок - четверг з 09-00 до 18-00"
+      },
         // інші об'єкти колекції
     ]
     ```
