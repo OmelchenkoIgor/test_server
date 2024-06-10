@@ -33,6 +33,22 @@ router.use('/', selectedEstablishment);
 //--------------------------------------------------------------------------------------------//
 // Маршрути для новин
 
+const allNews = require('./news/all');
+const uploadNews = require('./news/upload');
+const selectedNews = require('./news/selectedNews');
+const deleteNews = require('./news/delete');
+
+// Маршрут для отримання всіх елементів колекції
+router.use('/', allNews);
+
+// Маршрут для додавання елементу в колекцію
+router.use('/', uploadNews);
+
+// Маршрут для вибору об'єктів за id
+router.use('/', selectedNews);
+
+// Маршрут для видалення об'єкта з колекції
+router.use('/', deleteNews);
 
 //--------------------------------------------------------------------------------------------//
 // Маршрути для довідника
