@@ -26,6 +26,7 @@ router.post('/uploadNews', upload.array('images', 1), async (req, res) => {
             name: req.body.name,
             title: req.body.title,
             description: req.body.description,
+            info: req.body.info,
             date: req.body.date,
             link: req.body.link,
             image: imageIds.map(id => `https://test-server-lovat.vercel.app/api/image/${id}`)
